@@ -49,13 +49,34 @@
         android:textColor="#999999"
         android:textSize="20dip" />
 
-
-    <TextView
-        android:id="@+id/serialReveicedText"
-        android:layout_width="match_parent"
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/serialSendText" />
+        android:layout_above="@+id/pauseScrollButton"
+        android:layout_alignEnd="@+id/serialSendText"
+        android:layout_below="@+id/serialSendText"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
 
+        <TextView
+            android:id="@+id/serialReveicedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/serialSendText"
+            android:longClickable="false"
+            android:scrollbars="horizontal|vertical"
+            android:textIsSelectable="true" />
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/pauseScrollButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textView1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/pausesign" />
 
 </RelativeLayout>

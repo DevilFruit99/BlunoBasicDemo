@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity  extends BlunoLibrary {
@@ -13,8 +15,11 @@ public class MainActivity  extends BlunoLibrary {
 	private Button buttonSerialSend;
 	private EditText serialSendText;
 	private TextView serialReceivedText;
-	
-	@Override
+    private ScrollView mScrollView;
+    private ImageButton pauseScroll;
+    private boolean scroll = true;
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -23,6 +28,9 @@ public class MainActivity  extends BlunoLibrary {
         serialBegin(115200);													//set the Uart Baudrate on BLE chip to 115200
 		
         serialReceivedText=(TextView) findViewById(R.id.serialReveicedText);	//initial the EditText of the received data
+        mScrollView = (ScrollView) findViewById(R.id.SCROLLER_ID);
+
+
         serialSendText=(EditText) findViewById(R.id.serialSendText);			//initial the EditText of the sending data
         
         buttonSerialSend = (Button) findViewById(R.id.buttonSerialSend);		//initial the button for sending the data
@@ -67,6 +75,20 @@ public class MainActivity  extends BlunoLibrary {
 				buttonScanOnClickProcess();										//Alert Dialog for selecting the BLE device
 			}
 		});
+
+        pauseScroll = (ImageButton) findViewById(R.id.pauseScrollButton);
+        pauseScroll.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll = !scroll;
+                if (scroll) {
+                    pauseScroll.setImageResource(R.drawable.pausesign);
+                } else {
+                    pauseScroll.setImageResource(R.drawable.playsign);
+                }
+            }
+        });
+
 	}
 
 	protected void onResume(){
@@ -100,6 +122,14 @@ public class MainActivity  extends BlunoLibrary {
         onDestroyProcess();														//onDestroy Process by BlunoLibrary
     }
 
+    private void scrollToBottom() {
+        mScrollView.post(new Runnable() {
+            public void run() {
+                mScrollView.smoothScrollTo(0, serialReceivedText.getBottom());
+            }
+        });
+    }
+
 	@Override
 	public void onConectionStateChange(connectionStateEnum theConnectionState) {//Once connection state changes, this function will be called
 		switch (theConnectionState) {											//Four connection state
@@ -126,8 +156,11 @@ public class MainActivity  extends BlunoLibrary {
 	@Override
 	public void onSerialReceived(String theString) {							//Once connection data received, this function will be called
 		// TODO Auto-generated method stub
-		serialReceivedText.append(theString);							//append the text into the EditText
-		//The Serial data from the BLUNO may be sub-packaged, so using a buffer to hold the String is a good choice.
+        serialReceivedText.append(theString);                            //append the text into the EditText
+        if (scroll) {
+            scrollToBottom();
+        }
+        //The Serial data from the BLUNO may be sub-packaged, so using a buffer to hold the String is a good choice.
 					
 	}
 
