@@ -1,12 +1,11 @@
 package com.example.blunobasicdemo;
 
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TabHost;
 import android.widget.TextView;
 
 public class MainActivity  extends BlunoLibrary {
@@ -36,23 +35,23 @@ public class MainActivity  extends BlunoLibrary {
 				serialSend(serialSendText.getText().toString());				//send the data to the BLUNO
 
 
-                TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
-                tabHost.setup();
+                //TabHost tabHost = (TabHost)findViewById(R.id.tabHost);
+                //tabHost.setup();
 
-                TabHost.TabSpec tabSpec = tabHost.newTabSpec("dummy");
-                tabSpec.setContent(R.id.tabDummy);
-                tabSpec.setIndicator("Dummy");
-                tabHost.addTab(tabSpec);
+                //TabHost.TabSpec tabSpec = tabHost.newTabSpec("dummy");
+                //tabSpec.setContent(R.id.tabDummy);
+                //tabSpec.setIndicator("Dummy");
+                //tabHost.addTab(tabSpec);
 
-               tabSpec = tabHost.newTabSpec("data");
-                tabSpec.setContent(R.id.tabData);
-                tabSpec.setIndicator("Data");
-                tabHost.addTab(tabSpec);
+                //tabSpec = tabHost.newTabSpec("data");
+                //tabSpec.setContent(R.id.tabData);
+                //tabSpec.setIndicator("Data");
+                //tabHost.addTab(tabSpec);
 
-                tabSpec = tabHost.newTabSpec("settings");
-                tabSpec.setContent(R.id.tabSettings);
-                tabSpec.setIndicator("Settings");
-                tabHost.addTab(tabSpec);
+                //tabSpec = tabHost.newTabSpec("settings");
+                //tabSpec.setContent(R.id.tabSettings);
+                //tabSpec.setIndicator("Settings");
+                //tabHost.addTab(tabSpec);
 
 
 			}

@@ -6,111 +6,56 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:theme="@style/AppTheme"
+    tools:context=".MainActivity">
 
-    <TabHost
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/tabHost"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-            <TabWidget
-                android:id="@+id/tabs"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"></TabWidget>
+    <Button
+        android:id="@+id/buttonScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/serialSendText"
+        android:layout_below="@+id/textView1"
+        android:layout_gravity="right"
+        android:layout_marginTop="49dp"
+        android:text="@string/scan" />
 
-            <FrameLayout
-                android:id="@+id/frameLayout"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/buttonSerialSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/serialSendText"
+        android:layout_alignRight="@+id/serialSendText"
+        android:text="Send Data"
+        android:theme="@style/AppTheme" />
 
-                <LinearLayout
-                    android:id="@+id/tabDummy"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical">
+    <EditText
+        android:id="@+id/serialSendText"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/buttonScan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:background="#555555"
+        android:bufferType="editable"
+        android:ems="10"
+        android:hint="Send this to Bluno"
+        android:inputType="text"
+        android:textColor="#999999"
+        android:textSize="20dip" />
 
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/editText2"
-                        android:layout_alignRight="@+id/editText2"
-                        android:layout_below="@+id/editText2"
-                        android:ems="10"
-                        android:textSize="10sp" />
 
-                    <Button
-                        android:id="@+id/buttonScan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Scan"
-                        android:layout_below="@+id/textView1"
-                        android:layout_alignStart="@+id/serialSendText"
-                        android:layout_marginTop="49dp"
-                        android:layout_gravity="right" />
+    <TextView
+        android:id="@+id/serialReveicedText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/serialSendText" />
 
-                    <Button
-                        android:id="@+id/buttonSerialSend"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/serialSendText"
-                        android:layout_alignRight="@+id/serialSendText"
-                        android:text="Send Data" />
-
-                    <EditText
-                        android:id="@+id/serialSendText"
-                        android:layout_width="310dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@+id/buttonScan"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="22dp"
-                        android:background="#555555"
-                        android:bufferType="editable"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:text="Data sending Area"
-                        android:textColor="#999999"
-                        android:textSize="20dip" />
-
-                    <TextView
-                        android:id="@+id/editText2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/serialSendText"
-                        android:layout_below="@+id/serialSendText"
-                        android:layout_marginTop="20dp"
-                        android:ems="10"
-                        android:text="Received Data:"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/serialReveicedText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabData"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"></LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabSettings"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"></LinearLayout>
-
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
 
 </RelativeLayout>
