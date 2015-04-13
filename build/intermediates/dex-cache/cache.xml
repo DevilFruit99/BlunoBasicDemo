@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2">
 
     <item
-        jar="D:\Android\SDK\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="D:\Android WS\BlunoBasicDemo\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-e2d15c1468a232c3f7a41a6dbcb2cb94c085c0ec.jar" />
+        jar="D:\Android WS\BlunoBasicDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false" revision="21.1.2" sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex
+            dex="D:\Android WS\BlunoBasicDemo\app\build\intermediates\pre-dexed\debug\classes-c40807e5412b13f4d792c9ef0216fb469ff2bab7.jar" />
+    </item>
+    <item
+        jar="D:\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex
+            dex="D:\Android WS\BlunoBasicDemo\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-5d74dd90976a5fdbd4b021b1e9244e3200f3f259.jar" />
+    </item>
+    <item
+        jar="D:\Android WS\BlunoBasicDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false" revision="21.1.2" sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex
+            dex="D:\Android WS\BlunoBasicDemo\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-e80ab20af935b66ceb31a2da259095b43fb297d3.jar" />
     </item>
 
 </items>
