@@ -21,4 +21,10 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:22.0.0'
     compile files('src/main/java/libs/opencsv-3.3.jar')
+
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+
+    compile 'com.jjoe64:graphview:4.0.1'
+
 }

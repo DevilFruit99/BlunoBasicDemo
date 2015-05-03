@@ -52,7 +52,7 @@
         android:layout_alignParentEnd="true"
         android:adjustViewBounds="true"
         android:focusableInTouchMode="true"
-        android:src="@drawable/pausesign" />
+        android:src="@drawable/pause" />
 
     <TextView
         android:id="@+id/tableHeader"
